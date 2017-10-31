@@ -85,10 +85,19 @@ function numProps(obj) {
 console.log(numProps(friend));
 
 
+function filterBetween(array, min, max){
+
+  let filtered = array.filter(function(e){
+    if(min <= e && e <= max){
+      return e;
+    }
+  })
+  return filtered;
+}
+
+let not = [1,2,3,4,5,6,7,8,9,0]
+
+console.log(filterBetween(not, 3, 8));
 
 
-
-
-
-
-module.exports = { weekDay, snippet, numProps };
+module.exports = { weekDay, snippet, numProps, filterBetween };

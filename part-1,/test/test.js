@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const { weekDay, snippet, numProps  } = require('../function.js');
+const { weekDay, snippet, numProps, filterBetween } = require('../function.js');
 
 describe('weekDay', function(){
   it('day returns the day of the week given a date object', function(){
@@ -25,6 +25,13 @@ describe('snippet', function(){
 
 describe('numProps', function(){
   it('returns the number of keys in an object', function(){
+
+  })
+})
+
+
+describe('filterBetween', function(){
+  it('filters elements in an array against min and max values', function(){
 
   })
 })

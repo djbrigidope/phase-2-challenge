@@ -4,24 +4,91 @@
 
 
 function weekDay(date) {
-  let dateDay =  date.getDay();
-  let weekArray = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday'
-  ]
-  return(weekArray[dateDay]);
+  if(typeof date !== 'object'){
+    throw new TypeError('plaese to pass date object')
+  } else {
+    let dateDay =  date.getDay();
+    let weekArray = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ]
+    return(weekArray[dateDay]);
+  }
 }
 
-let weakDae = new Date(2017, 9, 30);
+let weakDae = new Date(2017, 5, 19);
+// let weakDae = 2017, 5, 19;
 console.log(weekDay(weakDae));
 
 
 
 
 
-module.exports = weekDay;
+function snippet(string, maxlength) {
+  if(string.length < maxlength){
+    return string;
+  } else {
+    let snippet = string.slice(0, maxlength);
+    return snippet + '...';
+  }
+}
+
+console.log(snippet('superthughyphyboi', 4));
+
+
+// $ node
+// > let friend = {
+// ...   name: 'Dominique',
+// ...   age: 30,
+// ...   phone: '555-555-5555'
+// ... }
+// undefined
+// > friend
+// { name: 'Dominique', age: 30, phone: '555-555-5555' }
+// > console.log(Object.keys(friend).length);
+// 3
+// undefined
+// > function numProps(obj){
+// ... return Object.keys(obj).length;
+// ... }
+// undefined
+// > console.log(numProps(friend));
+// 3
+// undefined
+// > console.log(Object.keys(friend));
+// [ 'name', 'age', 'phone' ]
+// undefined
+// > let returned = Object.keys(friend);
+// undefined
+// > returned
+// [ 'name', 'age', 'phone' ]
+// > returned.length
+// 3
+// >
+
+
+let friend = {
+  name: 'Dominique',
+  age: 30,
+  phone: '555-555-5555'
+}
+
+function numProps(obj) {
+  return Object.keys(obj).length;
+}
+
+console.log(numProps(friend));
+
+
+
+
+
+
+
+
+module.exports = { weekDay, snippet, numProps };

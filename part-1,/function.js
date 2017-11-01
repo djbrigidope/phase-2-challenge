@@ -1,7 +1,4 @@
 
-// Write a function weekday(date) to find the weekday for a given Date object,
-// returing either 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', or 'Sun'.
-
 
 function weekDay(date) {
   if(typeof date !== 'object'){
@@ -24,7 +21,6 @@ function weekDay(date) {
 let weakDae = new Date(2017, 5, 19);
 // let weakDae = 2017, 5, 19;
 // console.log(weekDay(weakDae));
-
 
 
 function snippet(string, maxlength) {
@@ -92,18 +88,21 @@ console.log(numProps(friend));
 
 
 function filterBetween(array, min, max){
-
-  let filtered = array.filter(function(e){
-    if(min <= e && e <= max){
-      return e;
-    }
-  })
-  return filtered;
+  if(!Array.isArray(array)){
+    throw new TypeError('i need a array')
+  } else {
+    let filtered = array.filter(function(e){
+      if(min <= e && e <= max){
+        return e
+      }
+    })
+    return filtered;
+  }
 }
 
-let not = [1,2,3,4,5,6,7,8,9,0]
+// let not = [1,2,3,4,5,6,7,8,9,0]
 
-// console.log(filterBetween(not, 3, 8));
+// console.log(filterBetween(not, 5, 8));
 
 
 module.exports = { weekDay, snippet, numProps, filterBetween };

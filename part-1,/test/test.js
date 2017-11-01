@@ -17,9 +17,9 @@ describe('snippet', function(){
     assert.equal(snippet('playerplayer',6), 'player...');
   })
 
-  it('takes a string', function(){
-
-    })
+  it('returns the whole string if length is less than max length', function(){
+    assert.equal(snippet('high', 7), 'high');
+  })
 })
 
 
@@ -41,6 +41,11 @@ describe('numProps', function(){
 
 describe('filterBetween', function(){
   it('filters elements in an array against min and max values', function(){
-
+  let thisArray = [1,2,3,4,5,6];
+  assert.equal(filterBetween(thisArray, 2, 5)[2,3,4,5]);
+  })
+  it('throws an error if not given an array', function(){
+    let someNonArray = '1,2,3,4';
+    assert.throws(function(){ filterBetween(someNonArray)}), TypeError, 'i need a array';
   })
 })

@@ -7,7 +7,7 @@ describe('weekDay', function(){
   assert.equal(weekDay(halloween), 'Tuesday');
   });
 
-  it('not using date object throws erro', function(){
+  it('not using date object throws error', function(){
     assert.throws(function(){ weekDay('1') }, TypeError, 'plaese to pass date object');
   });
 });
@@ -19,13 +19,22 @@ describe('snippet', function(){
 
   it('takes a string', function(){
 
-  })
+    })
 })
 
 
 describe('numProps', function(){
   it('returns the number of keys in an object', function(){
+    let cashMoney = {
+          hotBoys: 'juve, lil wayne, bg, turk',
+          bigTymers: 'Baby, mannie fresh',
+          youngMoney: 'drake, nikki minaj, dj khaled'
+        }
+    assert.equal(numProps(cashMoney), 3);
+  })
 
+  it('throws Error if not given an object', function(){
+    assert.throws(function(){ numProps('1') }, TypeError, 'i need an object');
   })
 })
 

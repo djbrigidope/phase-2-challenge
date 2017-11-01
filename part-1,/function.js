@@ -23,9 +23,7 @@ function weekDay(date) {
 
 let weakDae = new Date(2017, 5, 19);
 // let weakDae = 2017, 5, 19;
-console.log(weekDay(weakDae));
-
-
+// console.log(weekDay(weakDae));
 
 
 
@@ -38,7 +36,7 @@ function snippet(string, maxlength) {
   }
 }
 
-console.log(snippet('superthughyphyboi', 4));
+// console.log(snippet('superthughyphyboi', 4));
 
 
 // $ node
@@ -78,11 +76,19 @@ let friend = {
   phone: '555-555-5555'
 }
 
+// let none =[1,2,3];
+// let zero = 1;
+
 function numProps(obj) {
+  if(typeof obj !== 'object' || Array.isArray(obj)){
+    throw new TypeError ('i need an object');
+  }else{
   return Object.keys(obj).length;
+  }
 }
 
 console.log(numProps(friend));
+// console.log(numProps(none));
 
 
 function filterBetween(array, min, max){
@@ -97,7 +103,7 @@ function filterBetween(array, min, max){
 
 let not = [1,2,3,4,5,6,7,8,9,0]
 
-console.log(filterBetween(not, 3, 8));
+// console.log(filterBetween(not, 3, 8));
 
 
 module.exports = { weekDay, snippet, numProps, filterBetween };

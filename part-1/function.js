@@ -1,10 +1,9 @@
 
-
-function weekDay(date) {
-  if(typeof date !== 'object'){
+function weekDay (date) {
+  if (typeof date !== 'object') {
     throw new TypeError('plaese to pass date object')
   } else {
-    let dateDay =  date.getDay();
+    let dateDay = date.getDay()
     let weekArray = [
       'Sunday',
       'Monday',
@@ -14,26 +13,24 @@ function weekDay(date) {
       'Friday',
       'Saturday'
     ]
-    return(weekArray[dateDay]);
+    return (weekArray[dateDay])
   }
 }
 
-let weakDae = new Date(2017, 5, 19);
+let weakDae = new Date(2017, 5, 19)
 // let weakDae = 2017, 5, 19;
 // console.log(weekDay(weakDae));
 
-
-function snippet(string, maxlength) {
-  if(string.length < maxlength){
-    return string;
+function snippet (string, maxlength) {
+  if (string.length < maxlength) {
+    return string
   } else {
-    let snippet = string.slice(0, maxlength);
-    return snippet + '...';
+    let snippet = string.slice(0, maxlength)
+    return snippet + '...'
   }
 }
 
 // console.log(snippet('superthughyphyboi', 4));
-
 
 // $ node
 // > let friend = {
@@ -65,7 +62,6 @@ function snippet(string, maxlength) {
 // 3
 // >
 
-
 let friend = {
   name: 'Dominique',
   age: 30,
@@ -75,28 +71,27 @@ let friend = {
 // let none =[1,2,3];
 // let zero = 1;
 
-function numProps(obj) {
-  if(typeof obj !== 'object' || Array.isArray(obj)){
-    throw new TypeError ('i need an object');
-  }else{
-  return Object.keys(obj).length;
+function numProps (obj) {
+  if (typeof obj !== 'object' || Array.isArray(obj)) {
+    throw new TypeError('i need an object')
+  } else {
+    return Object.keys(obj).length
   }
 }
 
-console.log(numProps(friend));
+console.log(numProps(friend))
 // console.log(numProps(none));
 
-
-function filterBetween(array, min, max){
-  if(!Array.isArray(array)){
+function filterBetween (array, min, max) {
+  if (!Array.isArray(array)) {
     throw new TypeError('i need a array')
   } else {
-    let filtered = array.filter(function(e){
-      if(min <= e && e <= max){
+    let filtered = array.filter(function (e) {
+      if (min <= e && e <= max) {
         return e
       }
     })
-    return filtered;
+    return filtered
   }
 }
 
@@ -104,5 +99,4 @@ function filterBetween(array, min, max){
 
 // console.log(filterBetween(not, 5, 8));
 
-
-module.exports = { weekDay, snippet, numProps, filterBetween };
+module.exports = { weekDay, snippet, numProps, filterBetween }

@@ -10,5 +10,5 @@
   "test": "test"
 },
 "scripts": {
-  "test": "npm"
+  "npm": "test"
 },

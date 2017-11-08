@@ -42,7 +42,7 @@ describe('numProps', function(){
 describe('filterBetween', function(){
   it('filters elements in an array against min and max values', function(){
   let thisArray = [1,2,3,4,5,6];
-  assert.equal(filterBetween(thisArray, 2, 5)[2,3,4,5]);
+  assert.deep.equal(filterBetween(thisArray, 2, 5),[2,3,4,5]);
   })
   it('throws an error if not given an array', function(){
     let someNonArray = '1,2,3,4';

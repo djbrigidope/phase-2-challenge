@@ -9,7 +9,11 @@ const searchByState = function(input){
   } else {
       var matchedState = clients
         .filter(function(clients){
-          return clients.state.toLowerCase().startsWith(input.toLowerCase());
+          let save = clients.state.toLowerCase();
+          if(save === input.toLowerCase()){
+            return save;
+          }
+          // return clients.state.toLowerCase().startsWith(input.toLowerCase());
         })
         .map(function(clients){
           return {'id': clients.id, 'rep_name':clients.rep_name, 'company': clients.company, 'city': clients.city, 'state': clients.state}
